@@ -49,7 +49,7 @@ elif choice == 'Phân tích và kết quả':
         col1,col2=st.columns(2)
         with col1:
             # hiển thị các hình ảnh biểu đồ tại đây
-            st.image(f"{index_choice_eda}_eda.png", width=340, caption=f'Biểu đồ mô tả {choice_eda}')
+            st.image(f"{index_choice_eda}_eda.PNG", width=340, caption=f'Biểu đồ mô tả {choice_eda}')
         with col2:
             # hiển thị nội dung mô tả biểu đồ tại đây
             comment_content=ut.readtxt('SEGMENTATION_EDA_GRAPH_COMMENTS.txt')[1][index_choice_eda].strip()
@@ -241,4 +241,5 @@ elif choice == 'Hệ thống phân loại khách hàng 2':
                 F_value = row['F']
                 M_value = row['M']
                 st.write(f"Khách hàng {index+1}: R={R_value}, F={F_value}, M={M_value} --> ", end="")
+
                 customer_clustering(R_value, F_value, M_value)
