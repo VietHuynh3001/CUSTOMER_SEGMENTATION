@@ -164,7 +164,7 @@ elif choice=='Customer Segmentation System 1':
                st.warning("Please select at least one product")
             else:
                 st.session_state.invoices.append({"Date": invoice_date,"Product": quantity_dictionary})
-                st.success("Đã lưu hóa đơn!")
+                st.success("Invoice savedsaved!")
                 st.session_state.invoice_index += 1
         # Xuất DataFrame chỉ có 2 cột: Date, Product (dạng dictionary)
     if st.session_state.invoices:
@@ -186,7 +186,7 @@ elif choice=='Customer Segmentation System 1':
         
 elif choice == 'Customer Segmentation System 2':
     # Trường hợp 1: Nhập 1 khách hàng
-    st.subheader('PHÂN LOẠI KHÁCH HÀNG')
+    st.subheader('CUSTOMER SEGMENTATION')
     # Cho người dùng chọn giá trị R, F, M 1..4  (lưu ý đây chỉ là ví dụ đơn giản, trong thực tế R, F, M có thể là giá trị khác)      
     R_value = slider = st.slider("Select recency",0,600,0,1)
     F_value = slider = st.slider("Select frequency",0,100,0,1)
@@ -243,4 +243,5 @@ elif choice == 'Customer Segmentation System 2':
                 st.write(f"Customer {index+1}: R={R_value}, F={F_value}, M={M_value} --> ", end="")
 
                 customer_clustering(R_value, F_value, M_value)
+
 
